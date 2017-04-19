@@ -1,0 +1,26 @@
+<h1>Clients</h1>
+<table style="width:100%">
+<tr>
+<th>Klient</th>
+<th>MAC</th>
+<th>IP</th>
+<th>Usługa</th>
+<th>Pakiet</th>
+
+</tr>
+
+	{%for client in object_list %}
+<tr>
+	<td>{{client.cl_add_ul}} {{client.cl_add_nrd}}/{{client.cl_add_nrm}}</td>	
+	<td>{{client.cl_mac}}</td>
+	<td>{{client.cl_ip}}</td>
+	<td>{% if client.srv.service == 0 %} Aktywny {% elif client.srv.service == 3 %} Windykacja 
+	{% elif client.srv.service == 5 %} Odłączony {% endif %} </td>
+	<td> {{client.speed.ds}}/{{client.speed.us}}</td>
+	
+	
+	
+	
+</tr>
+	{% endfor %}
+</table>

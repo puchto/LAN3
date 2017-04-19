@@ -1,0 +1,8 @@
+<h1>Clients</h1>
+<ul>
+{%for client in object_list %}
+	<li>
+	{client.cl_add_ul}, {cl_add_nrd}, {cl_add_nrm}, {cl_ip}, {cl_mac}
+	</li>
+	{% endfor %}
+</ul>
